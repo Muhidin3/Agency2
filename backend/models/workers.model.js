@@ -1,0 +1,137 @@
+import mongoose, { Schema } from 'mongoose'
+
+
+const workerSchema = new mongoose.Schema({
+    name:{
+        type:String,default:'None'
+    },
+    arab:{
+        type:Schema.Types.ObjectId,
+        ref:'arabs'
+    },
+    
+    LegalDocuments:{
+        cv:{
+            type:String,default:'None'
+        },
+        passport:{
+            type:String,default:'None'
+        },
+        id:{
+            type:String,default:'None'
+        }
+    },
+
+    contract:{
+        contract:{
+            type:String,default:'None'
+        }
+    },
+
+    ContactInfo:{
+        phoneNumber:{
+            type:String,default:'None'
+        },
+        Password:{
+            type:String,default:'None'
+        },
+        TempId:{
+            type:String,default:'None'
+        }
+    },
+    LabourId:{
+        LabourId:{
+            type:String,default:'None'
+        }
+    },
+    MedicalInfo:{
+        paid:{
+            type:Boolean,default:false
+        },
+        appointment:{
+            type:String,default:'None'
+        },
+        approved:{
+            type:Boolean,default:false
+        }
+    },
+    wakala:{
+        paid:{
+            type:Boolean,default:false
+        }
+    },
+    Embassy:{
+        paid:{
+            type:Boolean,default:false
+        },
+        Reciept:{
+            type:String,default:"None"
+        },
+        EasyEnjazPaper:{
+            type:String,default:"None"
+        },
+        Approved:{
+            type:Boolean,default:false
+        },
+        Visa:{
+            type:String,default:"None"
+        }
+    },
+    Insurance:{
+        paid:{
+            type:Boolean,default:false
+        },
+        Approved:{
+            type:Boolean,default:false
+        },
+        InsuranceCertificate:{
+            type:String,default:"None"
+        }
+    },
+    Lmis:{
+        Coc:{
+            type:Boolean,default:false
+        },
+        AddedToPulledLabour:{
+            type:Boolean,default:false
+        },
+        ContractCreatedOrNot:{
+            type:Boolean,default:false
+        },
+        Documents:{
+            type:String,default:"None"
+        },
+        Paid:{
+            type:Boolean,default:false
+        },
+        Issued:{
+            type:Boolean,default:false
+        },
+        QrCode:{
+            type:String,default:"None"
+        },
+    },
+    Ticket:{
+        Booked:{
+            type:Boolean,default:false
+        },
+        BookingUploaded:{
+            type:String,default:"None"
+        },
+        FlightDateAndTime:{
+            type:String,default:"None"
+        }
+    },
+    Departed:{
+        Departed:{
+            type:Boolean,default:false
+        }
+    }
+
+
+},{
+    timestamps:true
+})
+const Worker = mongoose.model('Worker',workerSchema)
+
+export default Worker
